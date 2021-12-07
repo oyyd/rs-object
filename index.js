@@ -5,5 +5,5 @@ const bindings = loadBinding(__dirname, 'addon', 'rs-object')
 const File = bindings.createFileClass()
 
 module.exports = {
-  File,
+  File
 }
