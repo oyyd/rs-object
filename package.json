@@ -1,6 +1,6 @@
 {
   "name": "rs-object",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js bindings to Rust object",
   "main": "index.js",
   "repository": "git@github.com:oyyd/rs-object.git",
