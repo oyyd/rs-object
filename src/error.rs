@@ -4,7 +4,7 @@ use object;
 
 #[derive(Debug)]
 pub struct Error {
-  inner: anyhow::Error
+  inner: anyhow::Error,
 }
 
 impl std::fmt::Display for Error {
@@ -28,7 +28,7 @@ impl std::convert::Into<napi::Error> for Error {
 impl std::convert::From<object::Error> for Error {
   fn from(e: object::Error) -> Self {
     Error {
-      inner: anyhow::Error::new(e)
+      inner: anyhow::Error::new(e),
     }
   }
 }

@@ -1,9 +1,8 @@
+use crate::error::object_err;
 use napi::{
-  CallContext, JsObject, Result, JsFunction, JsUndefined, JsBuffer,
-  JsString, JsUnknown, JsNumber,
+  CallContext, JsBuffer, JsFunction, JsNumber, JsObject, JsString, JsUndefined, JsUnknown, Result,
 };
-use object::{self, Object, ObjectSymbol, SymbolKind, SectionIndex};
-use crate::error::{object_err};
+use object::{self, Object, ObjectSymbol, SectionIndex, SymbolKind};
 
 #[derive(Serialize, Deserialize)]
 struct SectionInfo {
@@ -30,30 +29,14 @@ struct FileWrapper {
 
 fn kind_to_string(kind: SymbolKind) -> String {
   let kind = match kind {
-    SymbolKind::Data => {
-      "Data"
-    }
-    SymbolKind::File => {
-      "File"
-    }
-    SymbolKind::Label => {
-      "Label"
-    }
-    SymbolKind::Null => {
-      "Null"
-    }
-    SymbolKind::Section => {
-      "Section"
-    }
-    SymbolKind::Text => {
-      "Text"
-    }
-    SymbolKind::Tls => {
-      "Tls"
-    }
-    _ => {
-      "Unknown"
-    }
+    SymbolKind::Data => "Data",
+    SymbolKind::File => "File",
+    SymbolKind::Label => "Label",
+    SymbolKind::Null => "Null",
+    SymbolKind::Section => "Section",
+    SymbolKind::Text => "Text",
+    SymbolKind::Tls => "Tls",
+    _ => "Unknown",
   };
 
   String::from(kind)
@@ -64,12 +47,8 @@ fn symbols_info(symbols: object::SymbolIterator) -> Vec<ObjectSymbolInfo> {
 
   for sb in symbols {
     let name = match sb.name().is_ok() {
-      true => {
-        sb.name().unwrap()
-      }
-      false => {
-        ""
-      }
+      true => sb.name().unwrap(),
+      false => "",
     };
 
     let address = sb.address();
@@ -94,12 +73,8 @@ fn section_info<'a>(section: impl object::ObjectSection<'a>) -> SectionInfo {
   let align = section.align();
   let file_range = section.file_range();
   let name = match section.name() {
-    Ok(name) => {
-      name
-    }
-    Err(e) => {
-      ""
-    }
+    Ok(name) => name,
+    Err(e) => "",
   };
 
   SectionInfo {
@@ -122,24 +97,12 @@ impl FileWrapper {
     let file = self.file()?;
 
     let format = match file.format() {
-      object::BinaryFormat::Coff => {
-        "Coff"
-      }
-      object::BinaryFormat::Elf => {
-        "Elf"
-      }
-      object::BinaryFormat::MachO => {
-        "MachO"
-      }
-      object::BinaryFormat::Pe => {
-        "Pe"
-      }
-      object::BinaryFormat::Wasm => {
-        "Wasm"
-      }
-      _ => {
-        "Unknown"
-      }
+      object::BinaryFormat::Coff => "Coff",
+      object::BinaryFormat::Elf => "Elf",
+      object::BinaryFormat::MachO => "MachO",
+      object::BinaryFormat::Pe => "Pe",
+      object::BinaryFormat::Wasm => "Wasm",
+      _ => "Unknown",
     };
 
     Ok(String::from(format))
@@ -162,7 +125,7 @@ impl FileWrapper {
     let section = file.section_by_name(name);
 
     if section.is_none() {
-      return Ok(None)
+      return Ok(None);
     }
 
     let section = section.unwrap();
@@ -244,14 +207,15 @@ fn section_by_index(ctx: CallContext) -> Result<JsUnknown> {
   let wrapper = ctx.env.unwrap::<FileWrapper>(&this)?;
   let index = ctx.get::<JsNumber>(0)?.get_int32()?;
 
-  let info = wrapper.section_by_index(index as usize).map_err(object_err)?;
+  let info = wrapper
+    .section_by_index(index as usize)
+    .map_err(object_err)?;
   if info.is_none() {
     return Ok(ctx.env.get_null()?.into_unknown());
   }
   let info = info.unwrap();
   Ok(ctx.env.to_js_value(&info)?.into_unknown())
 }
-
 
 #[js_function(1)]
 fn file_constructor(ctx: CallContext) -> Result<JsUndefined> {
@@ -280,6 +244,6 @@ pub fn create_file_class(ctx: CallContext) -> Result<JsFunction> {
       napi::Property::new(ctx.env, "dynamic_symbols")?.with_method(dynamic_symbols),
       napi::Property::new(ctx.env, "section_by_name")?.with_method(section_by_name),
       napi::Property::new(ctx.env, "section_by_index")?.with_method(section_by_index),
-    ]
+    ],
   )
 }

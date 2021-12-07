@@ -38,7 +38,7 @@ jobs:
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Cargo fmt
-        run: cargo fmt -- --check
+        run: cargo fmt
 
       - name: Clippy
         run: cargo clippy
