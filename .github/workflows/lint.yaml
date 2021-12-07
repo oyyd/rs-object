@@ -37,9 +37,6 @@ jobs:
       - name: 'Install dependencies'
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
-      - name: ESLint
-        run: yarn lint
-
       - name: Cargo fmt
         run: cargo fmt -- --check
 
