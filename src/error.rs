@@ -1,7 +1,3 @@
-use anyhow;
-use napi;
-use object;
-
 #[derive(Debug)]
 pub struct Error {
   inner: anyhow::Error,
@@ -15,12 +11,12 @@ impl std::fmt::Display for Error {
 
 impl std::error::Error for Error {}
 
-impl std::convert::Into<napi::Error> for Error {
-  fn into(self) -> napi::Error {
+impl std::convert::From<Error> for napi::Error {
+  fn from(e: Error) -> Self {
     napi::Error {
       // TODO need a custom error status here
       status: napi::Status::Unknown,
-      reason: format!("{}", self),
+      reason: format!("{}", e),
     }
   }
 }

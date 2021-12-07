@@ -74,7 +74,7 @@ fn section_info<'a>(section: impl object::ObjectSection<'a>) -> SectionInfo {
   let file_range = section.file_range();
   let name = match section.name() {
     Ok(name) => name,
-    Err(e) => "",
+    Err(_e) => "",
   };
 
   SectionInfo {
