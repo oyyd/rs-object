@@ -15,7 +15,11 @@ test('File', (t) => {
 
   const file = new File(content)
 
-  t.true(file.symbols().length > 0)
+  t.true(Array.isArray(file.symbols()))
+
+  if (file.symbols().length === 0) {
+    return
+  }
 
   t.true(Array.isArray(file.dynamic_symbols()))
 
