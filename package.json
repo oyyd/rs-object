@@ -18,7 +18,7 @@
     "index.js"
   ],
   "napi": {
-    "name": "addon",
+    "name": "rs-object",
     "triples": {
       "defaults": true,
       "additional": [
