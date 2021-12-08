@@ -1,4 +1,4 @@
-const { loadBinding } = require('@rsbind/helper')
+const { loadBinding } = require('@node-rs/helper')
 
 const bindings = loadBinding(__dirname, 'addon', '@rsbind/object')
 
