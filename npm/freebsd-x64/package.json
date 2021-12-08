@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/object-freebsd-x64",
+  "name": "@rsbind/object-freebsd-x64",
   "version": "1.0.0",
   "os": ["freebsd"],
   "cpu": ["x64"],

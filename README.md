@@ -1,4 +1,4 @@
-# @node-rs/object
+# @rsbind/object
 
 Node.js bindings to Rust [object](https://github.com/gimli-rs/object).
 
@@ -7,14 +7,14 @@ Currently, only a small set of APIs are exported.
 ## Installation
 
 ```n
-npm i @node-rs/object
+npm i @rsbind/object
 ```
 
 ## Example
 
 ```js
 const fs = require('fs')
-const { File } = require('@node-rs/object')
+const { File } = require('@rsbind/object')
 
 const file = new File(fs.readFileSync(process.execPath))
 

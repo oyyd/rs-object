@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/object-win32-x64-msvc",
+  "name": "@rsbind/object-win32-x64-msvc",
   "version": "1.0.0",
   "os": ["win32"],
   "cpu": ["x64"],

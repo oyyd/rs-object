@@ -1,6 +1,6 @@
-const { loadBinding } = require('@node-rs/helper')
+const { loadBinding } = require('@rsbind/helper')
 
-const bindings = loadBinding(__dirname, 'addon', '@node-rs/object')
+const bindings = loadBinding(__dirname, 'addon', '@rsbind/object')
 
 const File = bindings.createFileClass()
 

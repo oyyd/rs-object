@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/object-darwin-arm64",
+  "name": "@rsbind/object-darwin-arm64",
   "version": "1.0.0",
   "os": ["darwin"],
   "cpu": ["arm64"],

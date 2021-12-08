@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/object-linux-arm-gnueabihf",
+  "name": "@rsbind/object-linux-arm-gnueabihf",
   "version": "1.0.0",
   "os": ["linux"],
   "cpu": ["arm"],

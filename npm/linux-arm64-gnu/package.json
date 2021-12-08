@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/object-linux-arm64-gnu",
+  "name": "@rsbind/object-linux-arm64-gnu",
   "version": "1.0.0",
   "os": ["linux"],
   "cpu": ["arm64"],

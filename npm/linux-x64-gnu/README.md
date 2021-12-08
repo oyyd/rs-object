@@ -1,3 +1,3 @@
-# `@node-rs/object-linux-x64-gnu`
+# `@rsbind/object-linux-x64-gnu`
 
 This is the **x86_64-unknown-linux-gnu** binary for `addon`
