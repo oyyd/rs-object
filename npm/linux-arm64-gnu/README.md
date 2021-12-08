@@ -1,3 +1,3 @@
-# `rs-object-linux-arm64-gnu`
+# `@node-rs/object-linux-arm64-gnu`
 
-This is the **aarch64-unknown-linux-gnu** binary for `rs-object`
+This is the **aarch64-unknown-linux-gnu** binary for `addon`

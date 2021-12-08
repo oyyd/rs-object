@@ -1,10 +1,10 @@
 {
-  "name": "rs-object-darwin-arm64",
+  "name": "@node-rs/object-darwin-arm64",
   "version": "1.0.0",
   "os": ["darwin"],
   "cpu": ["arm64"],
-  "main": "rs-object.darwin-arm64.node",
-  "files": ["rs-object.darwin-arm64.node"],
+  "main": "addon.darwin-arm64.node",
+  "files": ["addon.darwin-arm64.node"],
   "description": "Template project for writing node package with napi-rs",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api"],
   "license": "MIT",

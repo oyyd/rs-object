@@ -1,3 +1,3 @@
-# `rs-object-darwin-x64`
+# `@node-rs/object-darwin-x64`
 
-This is the **x86_64-apple-darwin** binary for `rs-object`
+This is the **x86_64-apple-darwin** binary for `addon`

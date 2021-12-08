@@ -1,3 +1,3 @@
-# `rs-object-freebsd-x64`
+# `@node-rs/object-freebsd-x64`
 
-This is the **x86_64-unknown-freebsd** binary for `rs-object`
+This is the **x86_64-unknown-freebsd** binary for `addon`

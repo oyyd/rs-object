@@ -1,5 +1,5 @@
 {
-  "name": "rs-object",
+  "name": "@node-rs/object",
   "version": "0.1.1",
   "description": "Node.js bindings to Rust object",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "index.js"
   ],
   "napi": {
-    "name": "rs-object",
+    "name": "addon",
     "triples": {
       "defaults": true,
       "additional": [

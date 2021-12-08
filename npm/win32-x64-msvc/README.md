@@ -1,3 +1,3 @@
-# `rs-object-win32-x64-msvc`
+# `@node-rs/object-win32-x64-msvc`
 
-This is the **x86_64-pc-windows-msvc** binary for `rs-object`
+This is the **x86_64-pc-windows-msvc** binary for `addon`

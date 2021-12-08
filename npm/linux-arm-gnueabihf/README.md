@@ -1,3 +1,3 @@
-# `rs-object-linux-arm-gnueabihf`
+# `@node-rs/object-linux-arm-gnueabihf`
 
-This is the **armv7-unknown-linux-gnueabihf** binary for `rs-object`
+This is the **armv7-unknown-linux-gnueabihf** binary for `addon`

@@ -1,10 +1,10 @@
 {
-  "name": "rs-object-linux-x64-gnu",
+  "name": "@node-rs/object-linux-x64-gnu",
   "version": "1.0.0",
   "os": ["linux"],
   "cpu": ["x64"],
-  "main": "rs-object.linux-x64-gnu.node",
-  "files": ["rs-object.linux-x64-gnu.node"],
+  "main": "addon.linux-x64-gnu.node",
+  "files": ["addon.linux-x64-gnu.node"],
   "description": "Template project for writing node package with napi-rs",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api"],
   "license": "MIT",
